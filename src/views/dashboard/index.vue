@@ -7,19 +7,22 @@
 
 <script>
 import adminDashboard from './admin'
+import { getName } from '@/utils/auth'
 
 export default {
   name: 'Dashboard',
   components: { adminDashboard },
   data() {
     return {
-      name: this.$store.state.user.name,
+      name: getName(),
       currentRole: 'adminDashboard'
     }
   },
   computed: {
   },
   created() {
+  },
+  methods: {
   }
 }
 </script>

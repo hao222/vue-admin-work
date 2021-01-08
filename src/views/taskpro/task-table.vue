@@ -12,9 +12,9 @@
       <el-button v-if="role_name ==='管理员' || role_name ==='项目负责人' || !role_name " class="filter-item" style="margin-left: 10px;" type="primary" icon="el-icon-edit" @click="handleCreate">
         添加
       </el-button>
-      <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">
-        导出
-      </el-button>
+<!--      <el-button v-waves :loading="downloadLoading" class="filter-item" type="primary" icon="el-icon-download" @click="handleDownload">-->
+<!--        导出-->
+<!--      </el-button>-->
     </div>
 
     <el-table

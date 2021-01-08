@@ -1,5 +1,5 @@
 import { login, logout, getInfo } from '@/api/user'
-import { getToken, setToken, removeToken, setUid, removeUid } from '@/utils/auth'
+import { getToken, setToken, removeToken, setUid, removeUid, setName, removeName } from '@/utils/auth'
 import { resetRouter } from '@/router'
 import { Message } from 'element-ui'
 
@@ -66,6 +66,8 @@ const actions = {
         commit('SET_NAME', username)
         commit('SET_ROLE', role_name)
         setUid(id)
+        setName(username)
+        // 添加username cookies
         resolve(data)
       }).catch(error => {
         reject(error)
@@ -79,6 +81,7 @@ const actions = {
       logout(state.token).then(() => {
         removeToken() // must remove  token  first
         removeUid()
+        removeName()
         resetRouter()
         commit('RESET_STATE')
         resolve()
